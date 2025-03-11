@@ -1,6 +1,6 @@
 # quality_tag_api
 
-
+<pre>
 quality_tag_api/        # バックエンドとインフラを管理するリポジトリ
 │── apps/             # バックエンドアプリケーション
 │   ├── api/          # Express APIアプリケーション
@@ -30,3 +30,4 @@ quality_tag_api/        # バックエンドとインフラを管理するリポ
 │   │   ├── deploy.yml       # CI/CDのデプロイ設定
 │── .gitignore
 │── README.md
+</pre>
