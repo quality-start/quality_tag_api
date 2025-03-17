@@ -1,0 +1,36 @@
+name: Deploy to Cloud Run
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Authenticate with GCP
+        uses: google-github-actions/auth@v1
+        with:
+          credentials_json: ${{ secrets.GCP_SA_KEY }}
+
+      # - name: Build & Push Docker Image
+      #   run: |
+      #     docker build -t gcr.io/your-gcp-project-id/backend-api:latest ./apps/api
+      #     docker push gcr.io/your-gcp-project-id/backend-api:latest
+
+      # - name: Deploy to Cloud Run
+      #   run: |
+      #     gcloud run deploy backend-api \
+      #       --image gcr.io/your-gcp-project-id/backend-api:latest \
+      #       --platform managed \
+      #       --region asia-northeast1 \
+      #       --allow-unauthenticated
+
+      # - name: Deploy Infrastructure with CDKTF
+      #   run: |
+      #     npm run deploy --workspace=cdktf

@@ -1,0 +1,15 @@
+{
+    "name": "quality_tag_api",
+    "version": "1.0.0",
+    "private": true,
+    "workspaces": [
+      "apps/api",
+      "cdktf"
+    ],
+    "scripts": {
+      "dev": "npm run dev --workspace=apps/api",
+      "build": "npm run build --workspace=apps/api",
+      "deploy": "npm run deploy --workspace=cdktf"
+    }
+  }
+  
