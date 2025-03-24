@@ -31,3 +31,7 @@ quality_tag_api/        # バックエンドとインフラを管理するリポ
 │── .gitignore
 │── README.md
 </pre>
+
+- ローカルでの動作確認
+  - docker build --no-cache -t backend-api -f apps/Dockerfile .
+  - docker run -p 8080:8080 backend-api 
