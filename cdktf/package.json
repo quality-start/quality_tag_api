@@ -1,0 +1,16 @@
+{
+    "name": "cdktf",
+    "version": "1.0.0",
+    "main": "main.ts",
+    "license": "MIT",
+    "scripts": {
+      "deploy": "cdktf deploy",
+      "synth": "cdktf synth"
+    },
+    "dependencies": {
+      "@cdktf/provider-google": "^12.0.0",
+      "cdktf": "^0.20.4",
+      "constructs": "^10.0.5"
+    }
+  }
+  

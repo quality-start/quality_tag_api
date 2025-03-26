@@ -1,19 +1,20 @@
 {
     "name": "quality_tag_api",
     "devDependencies": {
-      "typescript": "^5.2.2"
+        "typescript": "^5.2.2"
     },
     "version": "1.0.0",
     "private": true,
     "workspaces": [
-      "apps/api",
-      "cdktf"
+        "apps/api",
+        "cdktf"
     ],
     "scripts": {
-      "dev": "npm run dev --workspace=apps/api",
-      "build": "npm run build --workspace=apps/api",
-      "deploy": "npm run deploy --workspace=cdktf"
+        "dev": "npm run dev --workspace=apps/api",
+        "build": "npm run build --workspace=apps/api",
+        "deploy": "npm run deploy --workspace=cdktf"
+    },
+    "dependencies": {
+        "@cdktf/provider-google": "^14.25.0"
     }
-    
 }
-  
