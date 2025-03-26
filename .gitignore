@@ -3,3 +3,4 @@ apps/node_modules/
 node_modules/
 package-lock.json
 apps/package-lock.json
+apps/api/dist/
