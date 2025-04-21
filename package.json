@@ -15,6 +15,6 @@
         "deploy": "npm run deploy --workspace=cdktf"
     },
     "dependencies": {
-        "@cdktf/provider-google": "^14.25.0"
+        "@cdktf/provider-google": "^14.27.0"
     }
 }

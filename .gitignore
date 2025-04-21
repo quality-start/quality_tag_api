@@ -1,3 +1,5 @@
+# macOS Finder data file
+.DS_Store
 apps/api/node_modules/
 apps/node_modules/
 node_modules/

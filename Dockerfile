@@ -6,7 +6,7 @@ WORKDIR /usr/src/app
 COPY tsconfig.json ./
 
 # ルートの package.json をコピー
-COPY package.json package-lock.json ./
+COPY package.json ./
 
 # api の package.json だけ先にコピーして install 時にworkspaceが認識できるようにする
 COPY apps/api/package.json ./apps/api/

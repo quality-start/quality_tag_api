@@ -32,6 +32,12 @@ quality_tag_api/        # バックエンドとインフラを管理するリポ
 │── README.md
 </pre>
 
-- ローカルでの動作確認
-  - docker build --no-cache -t backend-api -f apps/Dockerfile .
+- ローカルでの動作確認 
+  - docker build --no-cache -t backend-api .
   - docker run -p 8080:8080 backend-api 
+- cloud runへ手動適用
+  - gcloud run deploy quality-tag-api \         
+  --source . \              
+  --platform managed \
+  --region asia-northeast1 \
+  --allow-unauthenticated
