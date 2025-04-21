@@ -1,0 +1,114 @@
+{
+  "//": {
+    "metadata": {
+      "backend": "local",
+      "stackName": "quality-tag-stack",
+      "version": "0.20.11"
+    },
+    "outputs": {
+    }
+  },
+  "provider": {
+    "google": [
+      {
+        "project": "quality-tag-mobile-app",
+        "region": "asia-northeast1"
+      }
+    ]
+  },
+  "resource": {
+    "google_cloud_run_service": {
+      "quality-tag-api": {
+        "//": {
+          "metadata": {
+            "path": "quality-tag-stack/quality-tag-api",
+            "uniqueId": "quality-tag-api"
+          }
+        },
+        "lifecycle": {
+          "ignore_changes": [
+            "metadata[0].annotations[\"run.googleapis.com/build-enable-automatic-updates\"]",
+            "metadata[0].annotations[\"run.googleapis.com/build-id\"]",
+            "metadata[0].annotations[\"run.googleapis.com/build-image-uri\"]",
+            "metadata[0].annotations[\"run.googleapis.com/build-name\"]",
+            "metadata[0].annotations[\"run.googleapis.com/client-name\"]",
+            "metadata[0].annotations[\"run.googleapis.com/client-version\"]",
+            "metadata[0].annotations[\"run.googleapis.com/operation-id\"]",
+            "metadata[0].annotations[\"run.googleapis.com/urls\"]",
+            "metadata[0].annotations[\"serving.knative.dev/creator\"]",
+            "metadata[0].annotations[\"serving.knative.dev/lastModifier\"]",
+            "template[0].metadata[0].annotations[\"run.googleapis.com/client-name\"]",
+            "template[0].metadata[0].annotations[\"run.googleapis.com/client-version\"]",
+            "template[0].metadata[0].annotations[\"run.googleapis.com/startup-cpu-boost\"]",
+            "template[0].metadata[0].name",
+            "template[0].metadata[0].labels"
+          ]
+        },
+        "location": "asia-northeast1",
+        "metadata": {
+          "annotations": {
+            "run.googleapis.com/ingress": "all"
+          }
+        },
+        "name": "quality-tag-api",
+        "template": {
+          "metadata": {
+            "annotations": {
+              "autoscaling.knative.dev/maxScale": "1",
+              "run.googleapis.com/cpu-throttling": "true"
+            }
+          },
+          "spec": {
+            "container_concurrency": 80,
+            "containers": [
+              {
+                "image": "asia-northeast1-docker.pkg.dev/quality-tag-mobile-app/cloud-run-source-deploy/quality-tag-api@sha256:60af731bca08a0cf90e0eb38b8a8effda7eeedf70992a491f1980197d448efbd",
+                "ports": [
+                  {
+                    "container_port": 8080
+                  }
+                ],
+                "resources": {
+                  "limits": {
+                    "cpu": "1000m",
+                    "memory": "512Mi"
+                  }
+                },
+                "startup_probe": {
+                  "failure_threshold": 1,
+                  "initial_delay_seconds": 0,
+                  "period_seconds": 240,
+                  "tcp_socket": {
+                    "port": 8080
+                  },
+                  "timeout_seconds": 240
+                }
+              }
+            ],
+            "service_account_name": "252192332933-compute@developer.gserviceaccount.com",
+            "timeout_seconds": 300
+          }
+        },
+        "traffic": [
+          {
+            "latest_revision": true,
+            "percent": 100
+          }
+        ]
+      }
+    }
+  },
+  "terraform": {
+    "backend": {
+      "local": {
+        "path": "/Users/kusanomomiji/Desktop/prj/quality_start/quality_tag_api/cdktf/terraform.quality-tag-stack.tfstate"
+      }
+    },
+    "required_providers": {
+      "google": {
+        "source": "hashicorp/google",
+        "version": "4.85.0"
+      }
+    }
+  }
+}

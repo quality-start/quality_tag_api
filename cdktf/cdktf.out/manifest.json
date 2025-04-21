@@ -1,0 +1,16 @@
+{
+  "stacks": {
+    "quality-tag-stack": {
+      "annotations": [
+      ],
+      "constructPath": "quality-tag-stack",
+      "dependencies": [
+      ],
+      "name": "quality-tag-stack",
+      "stackMetadataPath": "stacks/quality-tag-stack/metadata.json",
+      "synthesizedStackPath": "stacks/quality-tag-stack/cdk.tf.json",
+      "workingDirectory": "stacks/quality-tag-stack"
+    }
+  },
+  "version": "0.20.11"
+}
